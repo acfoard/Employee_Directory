@@ -30,8 +30,21 @@
       <div class = "empList"></div>  
     </section>
     <section id="addPage">
-      <div>this is page 2</div>
+      <div class = "addForm form-group">
+          <input type="text" class="form-control" id="newName" placeholder="Enter Name">
+          <input type="text" class="form-control" id="newOffice" placeholder="Enter Office Number">
+          <input type="text" class="form-control" id="newPhone" placeholder="Enter Phone Number">
+          <button type="button" class="btn btn-primary" id="addEmp">Submit</button>
+      </div>
+      <div class = "empList"></div>
     </section>
+    <section id="verifyPage">
+        <div class = "verifyForm form-group">
+            <input type="text" class="form-control" id="verifyName" placeholder="Enter Name">
+            <button type="button" class="btn btn-primary" id="checkName">Submit</button>
+        </div>
+        <div class = "result"></div>
+      </section>
   </main>
 
   <script src="dom.js"></script>
