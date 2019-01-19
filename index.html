@@ -5,23 +5,38 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+  <link rel="stylesheet" href="style.css">
   <title>Document</title>
 </head>
 
-<body>
+<body class="container">
+  <main = class = "row">
+    <div class = "col-2">
+      <nav class="nav flex-column">
+          <li class = "nav-item">
+            <a id="showAll"  class="nav-link" href="">All</a>
+          </li>
+          <li class = "nav-item">
+            <a id="showAdd" class="nav-link" href="">Add</a>
+          </li>
+          <li>
+            <a id="showVerify" class="nav-link" href="">Verify</a>
+          </li>
+        </nav>
+    </div>
+
+    <section id="allPage">
+      <div class = "empList"></div>  
+    </section>
+    <section id="addPage">
+      <div>this is page 2</div>
+    </section>
+  </main>
+
   <script src="dom.js"></script>
   <script src="employeeList.js"></script>
   <script src="app.js"></script>
-  <nav>
-    <div id="page1link">Page 1</div>
-    <div id="page2link">Page 2</div>
-  </nav>
-  <section id="Page1">
-    <div>This is page 1</div>  
-  </section>
-  <section id="Page2">
-    <div>this is page 2</div>
-  </section>
 </body>
 
-</html>
+</html> 

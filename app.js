@@ -1,13 +1,23 @@
-(function() {
-    $('section').hide();
-})();
-
-const showPage1 = function (){
-    $('#Page2').hide();
-    $('#Page1').show();
+const showAdd = function (event) {
+    event.preventDefault();
+    $('#allPage').addClass('hidden');
+    $('#addPage').removeClass('hidden');
 };
 
-const showPage2 = function () {
-    $('#Page1').hide();
-    $('#Page2').show();
+const renderList = function() {
+    event.preventDefault();
+    $('#addPage').addClass('hidden');
+    $('#allPage').removeClass('hidden');
+    $('.empList').empty();
+    for (let i=0; i<employeeList.length; i++){
+        $('.empList').append(`<p>${employeeList[i].name}<br>${employeeList[i].officeNum}<br>${employeeList[i].phoneNum}</p>`);
+    }
 };
+
+$('section').addClass('hidden');
+
+$('#showAll').on('click', renderList);
+$('#showAdd').on('click', showAdd);
+
+
+
