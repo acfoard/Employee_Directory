@@ -20,6 +20,18 @@ const showAll = function() {
     }
 };
 
+//Get input values and place in array
+
+const newName = function() {
+    event.preventDefault();
+    newestName = $('#newEmpName').val();
+    newestOffice = $('#newOffice').val();
+    newestPhone = $('#newPhone').val(); 
+    console.log(newestName, newestOffice, newestPhone);
+}
+
+$("#addEmp").on('click',newName);
+
 //Function to show Verify Employee Page
 const showVerify = function(){
     event.preventDefault();
@@ -36,7 +48,8 @@ const verify = function() {
             $('.result').html("yes");
             break;
         } else {
-            console.log("no");
+            $(".result").empty();
+            $(".result").html("No");
         }
     };    
 }
