@@ -20,17 +20,24 @@ const showAll = function() {
     }
 };
 
-//Get input values and place in array
+//Get input values, create object, place in array and render new list
 
-const newName = function() {
+const addEmployee = function() {
     event.preventDefault();
     newestName = $('#newEmpName').val();
     newestOffice = $('#newOffice').val();
     newestPhone = $('#newPhone').val(); 
-    console.log(newestName, newestOffice, newestPhone);
-}
-
-$("#addEmp").on('click',newName);
+    nameObj = { 
+        name: newestName,
+        officeNum: newestOffice,
+        phoneNum: newestPhone,
+    };
+    employeeList.push(nameObj);
+    $('.empList').empty();
+    for (let i=0; i<employeeList.length; i++){
+        $('.empList').append(`<div class="card"><p class="card-body">${employeeList[i].name}<br>${employeeList[i].officeNum}<br>${employeeList[i].phoneNum}</p></div>`);
+    }
+};
 
 //Function to show Verify Employee Page
 const showVerify = function(){
@@ -61,6 +68,9 @@ $('section').addClass('hidden');
 $('#showAll').on('click', showAll);
 $('#showAdd').on('click', showAdd);
 $('#showVerify').on('click', showVerify);
+
+//Trigger Adding Employee
+$("#addEmp").on('click',addEmployee);
 
 //Trigger Verificaiton
 $('#checkName').on('click', verify);
