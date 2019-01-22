@@ -15,7 +15,7 @@
     <div class = "col-2">
       <nav class="nav flex-column">
           <li class = "nav-item">
-            <a id="showAll"  class="nav-link" href="">All</a>
+            <a id="showView"  class="nav-link" href="">View</a>
           </li>
           <li class = "nav-item">
             <a id="showAdd" class="nav-link" href="">Add</a>
@@ -23,27 +23,47 @@
           <li>
             <a id="showVerify" class="nav-link" href="">Verify</a>
           </li>
+          <li>
+            <a id="showUpdate" class="nav-link" href="">Update</a>
+          </li>
+                    <li>
+            <a id="showDelete" class="nav-link" href="">Delete</a>
+          </li>
         </nav>
     </div>
 
-    <section id="allPage">
+    <section id="viewPage">
       <div class = "empList"></div>  
     </section>
     <section id="addPage">
       <div class = "addForm form-group">
-          <input type="text" class="form-control" id="newEmpName" placeholder="Enter Name">
+          <input type="text" class="form-control" id="newEmpName" placeholder="New Employee">
           <input type="text" class="form-control" id="newOffice" placeholder="Enter Office Number">
           <input type="text" class="form-control" id="newPhone" placeholder="Enter Phone Number">
-          <button type="button" class="btn btn-primary" id="addEmp">Submit</button>
+          <button type="button" class="btn btn-primary" id="addEmp">Add</button>
       </div>
       <div class = "empList"></div>
     </section>
     <section id="verifyPage">
         <div class = "verifyForm form-group">
-            <input type="text" class="form-control" id="verifyName" placeholder="Enter Name">
-            <button type="button" class="btn btn-primary" id="checkName">Submit</button>
+            <input type="text" class="form-control" id="verifyName" placeholder="Name to Verify">
+            <button type="button" class="btn btn-primary" id="checkName">Verify</button>
         </div>
-        <div class = "result">Hi</div>
+        <div class = "result"></div>
+      </section>
+      <section id="updatePage">
+        <div class = "updateForm form-group">
+          <input type="text" class="form-control" id="updateName" placeholder="Name to Update">
+          <input type="text" class="form-control" id="updateOffice" placeholder="New Office Number">
+          <input type="text" class="form-control" id="updatePhone" placeholder="New Phone Number">
+          <button type="button" class="btn btn-primary" id="updateEmp">Update</button>
+      </div>
+      </section>
+      <section id="deletePage">
+        <div class = "deleteForm form-group">
+          <input type="text" class="form-control" id="deleteName" placeholder="Name to Remove">
+          <button type="button" class="btn btn-primary" id="addEmp">Delete</button>
+      </div>
       </section>
   </main>
 
