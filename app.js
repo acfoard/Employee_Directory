@@ -55,7 +55,7 @@ const verify = function() {
     const verName = $("#verifyName").val();
     let result = "No";
     for (i=0; i < employeeList.length; i++){
-        if (employeeList[i].name.includes(verName)) {
+        if (employeeList[i].name === verName) {
             result = "Yes";
             break;
         }
@@ -74,10 +74,11 @@ const showUpdate = function(){
 const update = function() {
     const updateName = $("#updateName").val();
     for (i=0; i < employeeList.length; i++){
-        if (employeeList[i].name.includes(updateName)) {
+        if (employeeList[i].name === updateName) {
             newOffice = $("#updateOffice").val();
-            console.log(newOffice);
             employeeList[i].officeNum = newOffice;
+            newPhone = $('#updatePhone').val();
+            employeeList[i].phoneNum = newPhone;
         }
     };
     renderList();  
@@ -91,6 +92,15 @@ const showDelete = function(){
 }
 
 //Function to Delete Employee
+const deleteEmp = function() {
+    const deleteName = $("#deleteName").val();
+    for (i=0; i < employeeList.length; i++){
+        if (employeeList[i].name === deleteName) {
+            employeeList.splice (i, 1);
+        } 
+    };
+    renderList();
+}
 
 //Initial Load - all pages hidden
 $('section').addClass('hidden');
@@ -110,6 +120,9 @@ $('#checkName').on('click', verify);
 
 //Trigger Update
 $('#updateEmp').on('click', update);
+
+//Trigger Delete
+$('#deleteEmp').on("click", deleteEmp);
 
 
 
