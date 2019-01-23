@@ -7,7 +7,7 @@ const renderList = function() {
 };
 
 //Function to show Employee List
-const showView = function() {
+const showView = function(event) {
     event.preventDefault();
     $('section').addClass('hidden');
     $('#viewPage').removeClass('hidden');
@@ -20,12 +20,11 @@ const showAdd = function (event) {
     $('section').addClass('hidden');
     $('#addPage').removeClass('hidden');
     $('.empList').empty();
-    renderList();
 };
 
 //Get input values, create object, place in array and render new list
 
-const addEmployee = function() {
+const addEmployee = function(event) {
     event.preventDefault();
     newestName = $('#newEmpName').val();
     newestOffice = $('#newOffice').val();
@@ -43,14 +42,15 @@ const addEmployee = function() {
 };
 
 //Function to show Verify Employee Page
-const showVerify = function(){
+const showVerify = function(event){
     event.preventDefault();
     $('section').addClass('hidden');
     $('#verifyPage').removeClass('hidden');
 }
 
 //Function to verify name
-const verify = function() {
+const verify = function(event) {
+    event.preventDefault();
     $(".result").empty();
     const verName = $("#verifyName").val();
     let result = "No";
@@ -64,14 +64,16 @@ const verify = function() {
 }
 
 //Function to show Update Employee Page
-const showUpdate = function(){
+const showUpdate = function(event){
     event.preventDefault();
     $('section').addClass('hidden');
     $('#updatePage').removeClass('hidden');
+    $('.empList').empty();
 }
 
 //Function to Update Employee
-const update = function() {
+const update = function(event) {
+    event.preventDefault();
     const updateName = $("#updateName").val();
     for (i=0; i < employeeList.length; i++){
         if (employeeList[i].name === updateName) {
@@ -79,24 +81,30 @@ const update = function() {
             employeeList[i].officeNum = newOffice;
             newPhone = $('#updatePhone').val();
             employeeList[i].phoneNum = newPhone;
+            $('#updateName').val("");
+            $('#updateOffice').val("");
+            $('#updatePhone').val("");
         }
     };
     renderList();  
 }
 
 //Function to show Delete Employee Page
-const showDelete = function(){
+const showDelete = function(event){
     event.preventDefault();
     $('section').addClass('hidden');
     $('#deletePage').removeClass('hidden');
+    $('.empList').empty();
 }
 
 //Function to Delete Employee
-const deleteEmp = function() {
+const deleteEmp = function(event) {
+    event.preventDefault();
     const deleteName = $("#deleteName").val();
     for (i=0; i < employeeList.length; i++){
         if (employeeList[i].name === deleteName) {
             employeeList.splice (i, 1);
+            $('#deleteName').val("");
         } 
     };
     renderList();
