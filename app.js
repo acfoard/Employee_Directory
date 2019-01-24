@@ -2,7 +2,7 @@
 const renderList = function() {
     $('.empList').empty();
     for (let i=0; i<employeeList.length; i++){
-        $('.empList').append(`<div class="card"><p class="card-body">${employeeList[i].name}<br>${employeeList[i].officeNum}<br>${employeeList[i].phoneNum}</p></div>`);
+        $('.empList').append(`<div class="card border border-secondary"><p class="card-body">${employeeList[i].name}<br>${employeeList[i].officeNum}<br>${employeeList[i].phoneNum}</p></div>`);
     }
 };
 
@@ -131,6 +131,3 @@ $('#updateEmp').on('click', update);
 
 //Trigger Delete
 $('#deleteEmp').on("click", deleteEmp);
-
-
-

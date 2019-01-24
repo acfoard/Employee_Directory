@@ -10,29 +10,29 @@
   <title>Document</title>
 </head>
 
-<body class="container">
+<body class="container-fluid h-100">
   <header class = "row">
     <div class = "flex-column header">
-      <h1>ACME Company Employee Directory</h1>
+      <h1 class = "text-center">ACME Company Employee Directory</h1>
     </div>
   </header>
   <main class = "row">
-    <div class = "col-2">
-      <nav class="nav flex-column">
+    <div class = "col-2 nav">
+      <nav class="flex-column">
           <li class = "nav-item">
-            <a id="showView"  class="nav-link" href="">View</a>
+            <a id="showView"  class="nav-link font-weight-bold" href="">View</a>
           </li>
           <li class = "nav-item">
-            <a id="showAdd" class="nav-link" href="">Add</a>
+            <a id="showAdd" class="nav-link font-weight-bold" href="">Add</a>
           </li>
           <li>
-            <a id="showVerify" class="nav-link" href="">Verify</a>
+            <a id="showVerify" class="nav-link font-weight-bold" href="">Verify</a>
           </li>
           <li>
-            <a id="showUpdate" class="nav-link" href="">Update</a>
+            <a id="showUpdate" class="nav-link font-weight-bold" href="">Update</a>
           </li>
                     <li>
-            <a id="showDelete" class="nav-link" href="">Delete</a>
+            <a id="showDelete" class="nav-link font-weight-bold" href="">Delete</a>
           </li>
         </nav>
     </div>
@@ -42,7 +42,7 @@
           <div class = "empList"></div>  
         </section>
         <section id="addPage">
-          <div class = "addForm form-group">
+          <div class = "form-inline">
               <input type="text" class="form-control" id="newEmpName" placeholder="New Employee">
               <input type="text" class="form-control" id="newOffice" placeholder="Enter Office Number">
               <input type="text" class="form-control" id="newPhone" placeholder="Enter Phone Number">
@@ -51,14 +51,14 @@
           <div class = "empList"></div>
         </section>
         <section id="verifyPage">
-            <div class = "verifyForm form-group">
+            <div class = "form-inline">
                 <input type="text" class="form-control" id="verifyName" placeholder="Name to Verify">
                 <button type="button" class="btn btn-primary" id="checkName">Verify</button>
             </div>
             <div class = "result"></div>
           </section>
           <section id="updatePage">
-            <div class = "updateForm form-group">
+            <div class = "form-inline">
               <input type="text" class="form-control" id="updateName" placeholder="Name to Update">
               <input type="text" class="form-control" id="updateOffice" placeholder="New Office Number">
               <input type="text" class="form-control" id="updatePhone" placeholder="New Phone Number">
@@ -67,7 +67,7 @@
           <div class = "empList"></div>
           </section>
           <section id="deletePage">
-            <div class = "deleteForm form-group">
+            <div class = "form-inline">
               <input type="text" class="form-control" id="deleteName" placeholder="Name to Remove">
               <button type="button" class="btn btn-primary" id="deleteEmp">Delete</button>
           </div>
